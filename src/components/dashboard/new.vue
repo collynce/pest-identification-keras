@@ -34,7 +34,7 @@ import axios from 'axios'
       }
     }, 
     created() {
-    axios.get("http://192.168.43.170:5000/api/results")
+    axios.get("http://127.0.0.1:5000/api/results")
       .then(res => {
         this.output = res.data;
         console.log(res)

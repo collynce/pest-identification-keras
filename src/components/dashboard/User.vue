@@ -4,7 +4,7 @@
       <v-content>
         <v-container fluid>
           <v-flex xs12 class="text-xs-center text-sm-center text-md-center text-lg-center">
-            <img :src="imageUrl" height="150" v-if="imageUrl">
+            <img :src="imageUrl" height="150" v-if="imageUrl" />
             <v-text-field
               label="Select Image"
               @click="pickFile"
@@ -18,7 +18,7 @@
               ref="image"
               accept="image/*"
               @change="onFilePicked"
-            >
+            />
           </v-flex>
         </v-container>
         <div class="outBox">
@@ -35,7 +35,7 @@
                   color="primary"
                   @click="onUpload();"
                 >Send</v-btn>
-                
+
                 <v-dialog v-model="dialog" hide-overlay persistent width="300">
                   <v-card color="primary" dark>
                     <v-card-text>
@@ -60,7 +60,7 @@
                 {{ text }}
                 <v-btn color="primary darken-2" flat @click="snackbar = false">Close</v-btn>
               </v-snackbar>
-              <div v-for="p in output" v-bind:item="p" v-bind:key="p">
+              <div v-for="p in output" v-bind:item="p" v-bind:key="p.id">
                 <v-layout row style="padding: 10px;">
                   <v-flex xs6 style="text-align: left;">
                     <strong color="info">Results</strong>
@@ -89,10 +89,18 @@
                           <h2>CONTROL</h2>
                           <p>The following are the insecticide fit for use against mango seed weevil:</p>
                           <ul>
-                            <li><p>LEXUS 245C 8ml/20ml</p></li>
-                            <li><p>EMERALD 200SL 10ml/20l</p></li>
-                            <li><p>PENTAGON 50EC 10ml/20ml</p></li>
-                            <li><p>BACIGUARD 16WDG 15g/20l</p></li>
+                            <li>
+                              <p>LEXUS 245C 8ml/20ml</p>
+                            </li>
+                            <li>
+                              <p>EMERALD 200SL 10ml/20l</p>
+                            </li>
+                            <li>
+                              <p>PENTAGON 50EC 10ml/20ml</p>
+                            </li>
+                            <li>
+                              <p>BACIGUARD 16WDG 15g/20l</p>
+                            </li>
                           </ul>
                         </v-card>
                       </v-flex>
@@ -113,7 +121,7 @@
                     </div>
                     <div v-else-if="p.prediction == 'New Pest'">
                       <p>This is a new pest in our system. We will work on it</p>
-                      </div>
+                    </div>
                   </v-layout>
                 </v-layout>
               </div>
@@ -136,9 +144,9 @@ export default {
     //console.log(token)
     return {
       title: "Image Upload",
-      
+
       dialog: false,
-      
+
       imageName: "",
       imageUrl: "",
       //imageFile: '',
@@ -154,7 +162,6 @@ export default {
       timeout: 6000,
       text: "Please select a file first!"
     };
-    
   },
   watch: {
     dialog(val) {
@@ -200,9 +207,9 @@ export default {
         //this.pleaseWait = 'Please wait ...';
         const fd = new FormData();
         fd.append("file", this.imageFile, this.imageFile.name, this.email);
-        console.log(this.email)
+        console.log(this.email);
         //this.pleaseWait = 'Please wait...';
-        axios.post("http://192.168.43.170:5000/api/predict", fd).then(res => {
+        axios.post("http://127.0.0.1:5000/api/predict", fd).then(res => {
           this.pleaseWait = "";
           this.error = "";
           console.log(res);

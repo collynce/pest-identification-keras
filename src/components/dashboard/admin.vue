@@ -3,7 +3,7 @@
   <v-app id="inspire" dark>
     <v-navigation-drawer v-model="drawer" fixed clipped app>
       <v-list dense>
-        <v-list-tile v-for="item in items" :key="item" router :to="item.lin">
+        <v-list-tile v-for="item in items" :key="item.id" router :to="item.lin">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>

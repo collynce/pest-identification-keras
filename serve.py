@@ -98,7 +98,7 @@ def predict():
 
             basepath = os.path.dirname(__file__)
             file_path = os.path.join(
-                basepath, 'uploads', secure_filename(ima.filename))
+                basepath, 'src/uploads', secure_filename(ima.filename))
             ima.save(file_path)
 
             if rslts == 1:
