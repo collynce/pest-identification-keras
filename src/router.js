@@ -42,9 +42,9 @@ let Router = new router({
       path: "/login",
       name: "login",
       component: Login
-      // meta: {
-      //   requiresGuest: true
-      // }
+       meta: {
+         requiresGuest: true
+       }
     },
     {
       path: "/log",
@@ -56,9 +56,9 @@ let Router = new router({
       path: "/signup",
       name: "signup",
       component: Signup
-      // meta: {
-      //   requiresGuest: true
-      // }
+       meta: {
+         requiresGuest: true
+       }
     },
     {
       path: "/admin",
@@ -90,30 +90,30 @@ let Router = new router({
       path: "/dashboard",
       name: "Dashboard",
       component: Dashboard,
-      // meta: {
-      //   requiresAuth: true
-      // },
+      meta: {
+         requiresAuth: true
+       },
       children: [
         {
           path: "/uploads",
           name: "upload",
           component: Uploads
-          // meta: {
-          //   requiresAuth: true
-          // }
+           meta: {
+             requiresAuth: true
+           }
         },
         {
           path: "/user",
           name: "user",
           component: User
-          // meta: {
-          //   requiresAuth: true
-          // }
+           meta: {
+             requiresAuth: true
+           }
         }
       ]
-      // meta: {
-      //   requiresAuth: true
-      // }
+       meta: {
+         requiresAuth: true
+       }
     }
   ]
 });
