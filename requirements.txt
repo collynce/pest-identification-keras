@@ -62,7 +62,7 @@ nbformat==4.4.0
 notebook==5.7.4
 numpy==1.15.4
 oauthlib==2.0.7
-opencv-contrib-python==4.1.0.25
+opencv-contrib-python==4.1.1.26
 pandas==0.24.1
 pandocfilters==1.4.2
 parso==0.3.2
