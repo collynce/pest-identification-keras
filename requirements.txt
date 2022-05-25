@@ -76,7 +76,7 @@ pybase64==0.5.0
 pycparser==2.19
 pydotplus==2.0.2
 Pygments==2.3.1
-PyJWT==1.7.1
+PyJWT==2.4.0
 PyMySQL==0.9.3
 pyparsing==2.2.0
 python-dateutil==2.7.3
